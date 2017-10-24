@@ -30,7 +30,7 @@ You will find some error like. Don't worry about that, the script bypass the pro
 node-pre-gyp ERR! Tried to download(404): https://github.com/kelektiv/node.bcrypt.js/releases/download/v1.0.3/bcrypt_lib-v1.0.3-node-v48-linux-arm.tar.gz 
 node-pre-gyp ERR! Pre-built binaries not found for bcrypt@1.0.3 and node@6.11.3 (node-v48 ABI) (falling back to source compile with node-gyp) 
 ```
-For mosquitto install, you will be asked again to insert the version to install or accept the default one. Mosquitto compilation will throw a lot of warning. Don't panic!
+For mosquitto install, you will be asked again to insert the version to install or accept the default one. Mosquitto compilation will throw a lot of warning messages. Don't panic!
 ```
 *****************
 *** MOSQUITTO ***
