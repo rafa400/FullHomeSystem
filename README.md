@@ -22,7 +22,7 @@ Then you will be promted to set arch and reuired NodeJS version. Default values 
 ** NODEJS and NODE-RED **
 *************************
 
-Architecture? armv6l / armv7l [armv7]: ^[[A
+Architecture? armv6l / armv7l [armv7]:
 NodeJS version? [v6.11.3]:
 ```
 You will find some error like. Don't worry about that, the script bypass the problem getting the files and puting it into the right place.
