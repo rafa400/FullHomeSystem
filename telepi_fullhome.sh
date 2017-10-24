@@ -209,9 +209,10 @@ mkdir /srv/homeassistant
 chown homeassistant:pi /srv/homeassistant
 
 cd /srv/homeassistant
-pip3 install --upgrade pip 
-pip3 install wheel
-pip3 install setuptools virtualenv psycopg2
+#pip3 install --upgrade pip 
+#pip3 install wheel
+pip3 install --upgrade --user homeassistant pip setuptools wheel virtualenv
+pip3 install --user homeassistant psycopg2
 
 su - homeassistant <<'EOF'
 cd /srv/homeassistant
