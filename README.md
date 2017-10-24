@@ -9,7 +9,8 @@ More info at https://www.telepi.org
 Install the latest Raspbian system into your Raspberry Pi 3
 Get the script:
 ```
-wget https://raw.githubusercontent.com/rafa400/FullHomeSystem/master/telepi_fullhome.sh
+pi@raspberrypi:~ $ sudo bash
+root@raspberrypi:/home/pi# wget https://raw.githubusercontent.com/rafa400/FullHomeSystem/master/telepi_fullhome.sh
 ```
 Execute the script:
 ```
