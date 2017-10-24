@@ -14,5 +14,5 @@ root@raspberrypi:/home/pi# wget https://raw.githubusercontent.com/rafa400/FullHo
 ```
 Execute the script:
 ```
-bash telepi_fullhome.sh
+root@raspberrypi:/home/pi# bash telepi_fullhome.sh
 ```
