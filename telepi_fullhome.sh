@@ -203,15 +203,22 @@ apt-get -y install python3 python3-venv python3-pip
 # https://home-assistant.io/docs/installation/raspberry-pi/
 
 useradd -m -d /home/homeassistant -s /bin/bash homeassistant
-mkdir /var/log/homeassistant
-chown homeassistant:pi /var/log/homeassistant
-mkdir /srv/homeassistant
-chown homeassistant:pi /srv/homeassistant
 
+if [ ! -d /var/log/homeassistant ]; then
+  mkdir /var/log/homeassistant
+  chown homeassistant:pi /var/log/homeassistant
+fi
+if [ ! -d /srv/homeassistant ]; then
+  mkdir /srv/homeassistant
+  chown homeassistant:pi /srv/homeassistant
+fi
 cd /srv/homeassistant
 #pip3 install --upgrade pip 
 #pip3 install wheel
-pip3 install --upgrade --user homeassistant pip setuptools wheel virtualenv
+pip3 install --upgrade --user homeassistant pip
+pip3 install --user homeassistant wheel 
+pip3 install --user homeassistant setuptools 
+pip3 install --user homeassistant virtualenv
 pip3 install --user homeassistant psycopg2
 
 su - homeassistant <<'EOF'
@@ -220,8 +227,12 @@ python3 -m venv .
 source bin/activate
 pip3 install homeassistant
 
-mkdir /home/homeassistant/.homeassistant
-touch /home/homeassistant/.homeassistant/known_devices.yaml
+if [ ! -d /home/homeassistant/.homeassistant ]; then
+  mkdir /home/homeassistant/.homeassistant
+fi
+if [ ! -f /home/homeassistant/.homeassistant/known_devices.yaml ]; then
+  touch /home/homeassistant/.homeassistant/known_devices.yaml
+fi  
 EOF
 
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
