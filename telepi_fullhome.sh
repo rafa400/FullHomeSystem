@@ -79,7 +79,7 @@ su -c "npm install -g node-red-contrib-ibm-watson-iot node-red-contrib-play-audi
 
 # wget https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/nodered.service -O /lib/systemd/system/nodered.service
 # Changed to set PATH as needed
-cat >> /lib/systemd/system/nodered.service << EOF
+cat > /lib/systemd/system/nodered.service << EOF
 # systemd service file to start Node-RED
 
 [Unit]
@@ -152,7 +152,7 @@ mkdir /etc/mosquitto/conf.d
 chown mosquitto:mosquitto /etc/mosquitto/conf.d
 
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
-cat >> /etc/systemd/system/mosquitto.service << EOF
+cat > /etc/systemd/system/mosquitto.service << EOF
 [Unit]
 Description=mosquitto MQTT v31 message broker
 Requires=network.target
@@ -225,7 +225,7 @@ touch /home/homeassistant/.homeassistant/known_devices.yaml
 EOF
 
 # https://www.freedesktop.org/software/systemd/man/systemd.service.html
-cat >> /etc/systemd/system/homeassistant.service << EOF
+cat > /etc/systemd/system/homeassistant.service << EOF
 [Unit]
 Description=Homeassistant
 Requires=network.target
