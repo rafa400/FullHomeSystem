@@ -32,14 +32,14 @@ arch=${arch2:-$arch}
 node_ver=${node_ver2:-$node_ver}
 
 cd /opt
-wget https://nodejs.org/dist/$node_ver/node-$node_ver-linux-$arch.tar.xz
+wget https://nodejs.org/dist/$node_ver/node-$node_ver-linux-$arch.tar.xz -O node-$node_ver-linux-$arch.tar.xz
 tar -xf node-$node_ver-linux-$arch.tar.xz
 rm node-$node_ver-linux-$arch.tar.xz
 ln -s node-$node_ver-linux-$arch node
-
+z
 mkdir /opt/node/lib/nde_modules
 cd /opt/node/lib/nde_modules
-wget https://github.com/kelektiv/node.bcrypt.js/archive/master.zip
+wget https://github.com/kelektiv/node.bcrypt.js/archive/master.zip -O master.zip
 unzip master.zip
 mv node.bcrypt.js-master bcrypt
 
@@ -137,7 +137,7 @@ mosquitto_ver=${mosquitto_ver2:-$mosquitto_ver}
 apt-get -y install libc-ares-dev  uuid-dev libwebsockets-dev libssl-dev make xsltproc docbook-to-man docbook-xsl
 
 cd /
-wget http://mosquitto.org/files/source/mosquitto-$mosquitto_ver.tar.gz
+wget http://mosquitto.org/files/source/mosquitto-$mosquitto_ver.tar.gz -O mosquitto-$mosquitto_ver.tar.gz
 tar -xf mosquitto-$mosquitto_ver.tar.gz
 cd mosquitto-$mosquitto_ver
 
